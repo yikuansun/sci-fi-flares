@@ -1,0 +1,11 @@
+{ "environment": {
+	"plugins" : [ 
+		{
+			"name"  : "Sci-Fi Flares By Yikuan Sun",
+			"url"   : "",
+			"width" : 400,
+			"height": 500,
+			"icon"  : ""
+		}
+	]
+} }
