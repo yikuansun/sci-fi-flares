@@ -1,10 +1,10 @@
 //initiate vars
-if (location.search == "") {
+docWidth = parseFloat(location.search.split("canvaswidth=")[1]);
+docHeight = parseFloat(location.search.split("canvasheight=")[1]);
+
+//go back if url is not valid
+if (Number.isNaN(docWidth) || Number.isNaN(docHeight)) {
     location.replace("index.html");
-}
-else {
-    docWidth = parseFloat(location.search.split("canvaswidth=")[1]);
-    docHeight = parseFloat(location.search.split("canvasheight=")[1]);
 }
 
 canvas = document.getElementById('canvas');
