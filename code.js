@@ -42,6 +42,8 @@ function draw() {
 
     //update preview
     document.getElementById("flarepreview").setAttribute("src", canvas.toDataURL("image/jpg"));
+    //make download link work
+    document.getElementById("download_form").action = document.getElementById("flarepreview").src;
 }
 
 document.getElementsByTagName("button")[0].onclick = draw;
