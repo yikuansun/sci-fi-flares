@@ -18,12 +18,14 @@ ctx.globalCompositeOperation = 'screen'; //due to absense of linear dodge (add),
 function addArtifact(imgsrc, centerx, centery, width, height) {
     image = new Image();
     image.src = imgsrc;
+    //position by centerpoint
     x = centerx - width/2;
     y = centery - height/2;
     ctx = canvas.getContext("2d");
     ctx.drawImage(image, x, y, width, height);
 }
 
+//download link - thanks to https://stackoverflow.com/users/3986879/ulf-aslak
 var download = function(){
     var link = document.createElement("a");
     link.download = "scififlare.jpg";
@@ -51,6 +53,8 @@ function draw() {
     document.getElementById("flarepreview").setAttribute("src", canvas.toDataURL("image/jpg"));
 }
 
+//update preview
 document.getElementsByTagName("button")[0].onclick = draw;
+//export overlay
 document.getElementsByTagName("button")[1].onclick = download;
 draw();
