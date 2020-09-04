@@ -13,3 +13,7 @@ button {
     font-family: 'Orbitron', sans-serif;
     color: white;
 }
+#flarepreview {
+    height: 40vh;
+    width: auto;
+}

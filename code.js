@@ -7,7 +7,9 @@ if (Number.isNaN(docWidth) || Number.isNaN(docHeight)) {
     location.replace("index.html");
 }
 
+//initiate canvas
 canvas = document.getElementById('canvas');
+canvas.style.backgroundColor = "#000000";
 canvas.width = docWidth;
 canvas.height = docHeight;
 ctx = canvas.getContext("2d");
@@ -23,6 +25,10 @@ function addArtifact(imgsrc, centerx, centery, width, height) {
 }
 
 function draw() {
+    //clear old drawing
+    ctx = canvas.getContext("2d");
+    ctx.fillStyle = "black";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     //add elements
     addArtifact("iris1.png", docWidth / 2, docHeight / 2, 20, 20);
