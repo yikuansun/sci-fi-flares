@@ -27,6 +27,7 @@ function addArtifact(imgsrc, centerx, centery, width, height) {
 function draw() {
     //clear old drawing
     ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, docWidth, docHeight);
     ctx.fillStyle = "black";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
