@@ -25,6 +25,9 @@ function addArtifact(imgsrc, centerx, centery, width, height) {
 }
 
 function draw() {
+    //read user input
+    flarecenter = [document.getElementById("flarex").value, document.getElementById("flarey").value]
+
     //clear old drawing
     ctx = canvas.getContext("2d");
     ctx.clearRect(0, 0, docWidth, docHeight);
@@ -32,6 +35,7 @@ function draw() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     //add elements
+    addArtifact("hotspot1.png", flarecenter[0], flarecenter[1], 500, 500);
     addArtifact("iris1.png", docWidth / 2, docHeight / 2, 200, 200);
 
     //update preview
