@@ -24,6 +24,13 @@ function addArtifact(imgsrc, centerx, centery, width, height) {
     ctx.drawImage(image, x, y, width, height);
 }
 
+var download = function(){
+    var link = document.createElement("a");
+    link.download = "scififlare.jpg";
+    link.href = canvas.toDataURL("image/jpg");
+    link.click();
+}
+
 function draw() {
     //read user input
     flarecenter = [document.getElementById("flarex").value, document.getElementById("flarey").value]
@@ -42,9 +49,8 @@ function draw() {
 
     //update preview
     document.getElementById("flarepreview").setAttribute("src", canvas.toDataURL("image/jpg"));
-    //make download link work
-    document.getElementById("download_form").action = canvas.toDataURL("image/jpg");
 }
 
 document.getElementsByTagName("button")[0].onclick = draw;
+document.getElementsByTagName("button")[1].onclick = download;
 draw();
