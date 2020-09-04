@@ -31,7 +31,7 @@ function draw() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     //add elements
-    addArtifact("iris1.png", docWidth / 2, docHeight / 2, 20, 20);
+    addArtifact("iris1.png", docWidth / 2, docHeight / 2, 200, 200);
 
     //update preview
     document.getElementById("flarepreview").setAttribute("src", canvas.toDataURL("image/jpg"));
