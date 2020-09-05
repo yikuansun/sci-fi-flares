@@ -13,7 +13,7 @@ canvas.style.backgroundColor = "#000000";
 canvas.width = docWidth;
 canvas.height = docHeight;
 ctx = canvas.getContext("2d");
-ctx.globalCompositeOperation = 'screen'; //due to absense of linear dodge (add), which is preferable imo
+ctx.globalCompositeOperation = "lighter";
 
 function addArtifact(imgsrc, centerx, centery, width, height) {
     image = new Image();
