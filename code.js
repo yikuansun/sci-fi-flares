@@ -59,10 +59,15 @@ function genArrayBuffer() {
     return imageData.data.buffer;
 }
 
-try {
-    //check if in iframe
-    myNewVar = window.self !== window.top;
-} catch (e) {
+function checkIframe() {
+    try {
+        myNewVar = window.self !== window.top;
+    } catch (e) {
+        return true;
+    }
+}
+
+if (checkIframe()) { //if in iframe (using as photopea plugin)
     //create button element
     sendToPhotopeaButton = document.createElement("button");
 
