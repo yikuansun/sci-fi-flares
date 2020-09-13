@@ -53,6 +53,7 @@ function draw() {
     document.getElementById("flarepreview").setAttribute("src", canvas.toDataURL("image/jpg"));
 }
 
+/*
 function genArrayBuffer() {
     ctx = canvas.getContext("2d");
     imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
@@ -67,7 +68,7 @@ function checkIframe() {
     }
 }
 
-//if (checkIframe()) { //if in iframe (using as photopea plugin)
+if (checkIframe()) { //if in iframe (using as photopea plugin)
     //create button element
     sendToPhotopeaButton = document.createElement("button");
     sendToPhotopeaButton.innerText = "Send to Photopea";
@@ -81,7 +82,8 @@ function checkIframe() {
     sendToPhotopeaButton.onclick = function() {
         window.parent.postMessage(genArrayBuffer(), "*");
     }
-//}
+}
+*/
 
 //update preview
 document.getElementsByTagName("button")[0].onclick = draw;
