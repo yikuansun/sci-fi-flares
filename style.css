@@ -12,6 +12,7 @@ button {
     background-color: #000055;
     font-family: 'Orbitron', sans-serif;
     color: white;
+    cursor: pointer;
 }
 #flarepreview {
     height: 40vh;
