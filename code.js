@@ -35,7 +35,7 @@ var download = function(){
 
 function draw() {
     //read user input
-    flarecenter = [document.getElementById("flarex").value, document.getElementById("flarey").value]
+    flarecenter = [document.getElementById("flarex").value, document.getElementById("flarey").value];
 
     //clear old drawing
     ctx = canvas.getContext("2d");
@@ -51,6 +51,30 @@ function draw() {
 
     //update preview
     document.getElementById("flarepreview").setAttribute("src", canvas.toDataURL("image/jpg"));
+}
+
+function genArrayBuffer() {
+    ctx = canvas.getContext("2d");
+    imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    return imageData.data.buffer;
+}
+
+try {
+    //check if in iframe
+    myNewVar = window.self !== window.top;
+} catch (e) {
+    //create button element
+    sendToPhotopeaButton = document.createElement("button");
+
+    //add a line break
+    document.getElementsByTagName("div")[0].appendChild(document.createElement("br"));
+    //add button to document
+    document.getElementsByTagName("div")[0].appendChild(sendToPhotopeaButton);
+
+    //add onclick
+    sendToPhotopeaButton.onclick = function() {
+        window.parent.postMessage(genArrayBuffer(), "*");
+    }
 }
 
 //update preview
