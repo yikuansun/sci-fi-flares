@@ -70,6 +70,7 @@ function checkIframe() {
 //if (checkIframe()) { //if in iframe (using as photopea plugin)
     //create button element
     sendToPhotopeaButton = document.createElement("button");
+    sendToPhotopeaButton.innerText = "Send to Photopea";
 
     //add a line break
     document.getElementsByTagName("div")[0].appendChild(document.createElement("br"));
