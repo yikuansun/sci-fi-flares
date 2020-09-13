@@ -61,13 +61,13 @@ function genArrayBuffer() {
 
 function checkIframe() {
     try {
-        myNewVar = window.self !== window.top;
+        myNewVar = window.self != window.top;
     } catch (e) {
         return true;
     }
 }
 
-if (checkIframe()) { //if in iframe (using as photopea plugin)
+//if (checkIframe()) { //if in iframe (using as photopea plugin)
     //create button element
     sendToPhotopeaButton = document.createElement("button");
 
@@ -80,7 +80,7 @@ if (checkIframe()) { //if in iframe (using as photopea plugin)
     sendToPhotopeaButton.onclick = function() {
         window.parent.postMessage(genArrayBuffer(), "*");
     }
-}
+//}
 
 //update preview
 document.getElementsByTagName("button")[0].onclick = draw;
