@@ -14,6 +14,10 @@ button {
     color: white;
     cursor: pointer;
 }
+canvas {
+    height: 40vh;
+    width: auto;
+}
 #flarepreview {
     height: 40vh;
     width: auto;
