@@ -53,38 +53,6 @@ function draw() {
     document.getElementById("flarepreview").setAttribute("src", canvas.toDataURL("image/jpg"));
 }
 
-/*
-function genArrayBuffer() {
-    ctx = canvas.getContext("2d");
-    imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    return imageData.data.buffer;
-}
-
-function checkIframe() {
-    try {
-        myNewVar = window.self != window.top;
-    } catch (e) {
-        return true;
-    }
-}
-
-if (checkIframe()) { //if in iframe (using as photopea plugin)
-    //create button element
-    sendToPhotopeaButton = document.createElement("button");
-    sendToPhotopeaButton.innerText = "Send to Photopea";
-
-    //add a line break
-    document.getElementsByTagName("div")[0].appendChild(document.createElement("br"));
-    //add button to document
-    document.getElementsByTagName("div")[0].appendChild(sendToPhotopeaButton);
-
-    //add onclick
-    sendToPhotopeaButton.onclick = function() {
-        window.parent.postMessage(genArrayBuffer(), "*");
-    }
-}
-*/
-
 //update preview
 document.getElementsByTagName("button")[0].onclick = draw;
 //export overlay
