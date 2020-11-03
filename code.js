@@ -44,8 +44,8 @@ function draw() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     //add elements
-    addArtifact("streakleft1.png", flarecenter[0], flarecenter[1], (docWidth + (flarecenter[0] - docWidth / 2) * 1.5) / 1.5, docHeight / 6);
-    addArtifact("streakright1.png", flarecenter[0], flarecenter[1], (docWidth - (flarecenter[0] - docWidth / 2) * 1.5) / 1.5, docHeight / 6);
+    addArtifact("streakleft1.png", flarecenter[0], flarecenter[1], (docWidth + (flarecenter[0] - docWidth / 2) * 1.5) / 1.5, docHeight / 5);
+    addArtifact("streakright1.png", flarecenter[0], flarecenter[1], (docWidth - (flarecenter[0] - docWidth / 2) * 1.5) / 1.5, docHeight / 5);
     addArtifact("hotspot1.png", flarecenter[0], flarecenter[1], docHeight / 4, docHeight / 4);
     addArtifact("iris1.png", docWidth / 2, docHeight / 2, docHeight / 10, docHeight / 10);
 
