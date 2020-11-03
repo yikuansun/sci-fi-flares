@@ -36,6 +36,9 @@ var download = function(){
 function draw() {
     //read user input
     flarecenter = [document.getElementById("flarex").value, document.getElementById("flarey").value];
+    hotspottype = document.getElementById("hotspottype").value;
+    streaktype = document.getElementById("streaktype").value;
+    iristype = document.getElementById("iristype").value;
 
     //clear old drawing
     ctx = canvas.getContext("2d");
