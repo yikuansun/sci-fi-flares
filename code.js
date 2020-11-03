@@ -46,7 +46,7 @@ function draw() {
     //add elements
     addArtifact("streakleft1.png", flarecenter[0], flarecenter[1], docWidth + (flarecenter[0] - docWidth / 2) * 1.5, docHeight / 6);
     addArtifact("streakright1.png", flarecenter[0], flarecenter[1], docWidth - (flarecenter[0] - docWidth / 2) * 1.5, docHeight / 6);
-    addArtifact("hotspot1.png", flarecenter[0], flarecenter[1], docHeight / 6, docHeight / 6);
+    addArtifact("hotspot1.png", flarecenter[0], flarecenter[1], docHeight / 4, docHeight / 4);
     addArtifact("iris1.png", docWidth / 2, docHeight / 2, docHeight / 10, docHeight / 10);
 
     //update preview
