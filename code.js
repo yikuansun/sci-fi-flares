@@ -35,7 +35,7 @@ var download = function(){
 
 function draw() {
     //read user input
-    flarecenter = [document.getElementById("flarex").value, document.getElementById("flarey").value];
+    flarecenter = [parseFloat(document.getElementById("flarex").value), parseFloat(document.getElementById("flarey").value)];
     hotspottype = document.getElementById("hotspottype").value;
     streaktype = document.getElementById("streaktype").value;
     iristype = document.getElementById("iristype").value;
@@ -50,7 +50,18 @@ function draw() {
     addArtifact("streakleft" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth + (flarecenter[0] - docWidth / 2) * 1.5) / 1.5, docHeight / 5);
     addArtifact("streakright" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth - (flarecenter[0] - docWidth / 2) * 1.5) / 1.5, docHeight / 5);
     addArtifact("hotspot" + hotspottype + ".png", flarecenter[0], flarecenter[1], docHeight / 4, docHeight / 4);
-    addArtifact("iris" + iristype + ".png", docWidth / 2, docHeight / 2, docHeight / 10, docHeight / 10);
+    centeroffset = [flarecenter[0] - docWidth / 2, flarecenter[1] - docHeight / 2];
+    ctx.globalAlpha = 0.125;
+    addArtifact("iris" + iristype + ".png", docWidth / 2 - centeroffset[0], docHeight / 2 - centeroffset[1], docHeight / 1.25, docHeight / 1.25);
+    ctx.globalAlpha = 0.25;
+    addArtifact("iris" + iristype + ".png", docWidth / 2 - 0.5 * centeroffset[0], docHeight / 2 - 0.5 * centeroffset[1], docHeight / 2.5, docHeight / 2.5);
+    ctx.globalAlpha = 0.5;
+    addArtifact("iris" + iristype + ".png", docWidth / 2, docHeight / 2, docHeight / 5, docHeight / 5);
+    ctx.globalAlpha = 1;
+    addArtifact("iris" + iristype + ".png", docWidth / 2 + 0.5 * centeroffset[0], docHeight / 2 + 0.5 * centeroffset[1], docHeight / 10, docHeight / 10);
+    ctx.globalAlpha = 0.8;
+    addArtifact("iris" + iristype + ".png", docWidth / 2 + 1.5 * centeroffset[0], docHeight / 2 + 1.5 * centeroffset[1], docHeight / 8, docHeight / 8);
+    ctx.globalAlpha = 1;
 }
 
 //update preview
