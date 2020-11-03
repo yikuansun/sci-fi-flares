@@ -54,7 +54,9 @@ function draw() {
 }
 
 //update preview
-document.getElementsByTagName("button")[0].onclick = draw;
+//document.getElementsByTagName("button")[0].onclick = draw;
+document.getElementsByTagName("input")[0].onclick = draw;
+document.getElementsByTagName("input")[1].onclick = draw;
 //export overlay
 document.getElementsByTagName("button")[1].onclick = download;
 draw();
