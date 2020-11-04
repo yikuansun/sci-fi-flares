@@ -47,8 +47,8 @@ function draw() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     //add elements
-    addArtifact("streakleft" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth + (flarecenter[0] - docWidth / 2) * 1.5) / 1.5, docHeight / 5);
-    addArtifact("streakright" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth - (flarecenter[0] - docWidth / 2) * 1.5) / 1.5, docHeight / 5);
+    addArtifact("streakleft" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth + (flarecenter[0] - docWidth / 2) * 1.5) / 1.25, docHeight / 5);
+    addArtifact("streakright" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth - (flarecenter[0] - docWidth / 2) * 1.5) / 1.25, docHeight / 5);
     addArtifact("hotspot" + hotspottype + ".png", flarecenter[0], flarecenter[1], docHeight / 4, docHeight / 4);
     centeroffset = [flarecenter[0] - docWidth / 2, flarecenter[1] - docHeight / 2];
     ctx.globalAlpha = 0.125;
