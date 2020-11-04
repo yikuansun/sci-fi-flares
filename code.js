@@ -60,7 +60,13 @@ function draw() {
     ctx.globalAlpha = 1;
     addArtifact("iris" + iristype + ".png", docWidth / 2 + 0.5 * centeroffset[0], docHeight / 2 + 0.5 * centeroffset[1], docHeight / 10, docHeight / 10);
     ctx.globalAlpha = 0.8;
-    addArtifact("iris" + iristype + ".png", docWidth / 2 + 1.5 * centeroffset[0], docHeight / 2 + 1.5 * centeroffset[1], docHeight / 8, docHeight / 8);
+    addArtifact("iris" + iristype + ".png", docWidth / 2 + 1.25 * centeroffset[0], docHeight / 2 + 1.25 * centeroffset[1], docHeight / 20, docHeight / 20);
+    ctx.globalAlpha = 0.4;
+    addArtifact("iris" + iristype + ".png", docWidth / 2 + 1.5 * centeroffset[0], docHeight / 2 + 1.5 * centeroffset[1], docHeight / 10, docHeight / 10);
+    ctx.globalAlpha = 0.2;
+    addArtifact("iris" + iristype + ".png", docWidth / 2 + 1.75 * centeroffset[0], docHeight / 2 + 1.75 * centeroffset[1], docHeight / 5, docHeight / 5);
+    ctx.globalAlpha = 0.1;
+    addArtifact("iris" + iristype + ".png", docWidth / 2 + 2 * centeroffset[0], docHeight / 2 + 2 * centeroffset[1], docHeight / 2.5, docHeight / 2.5);
     ctx.globalAlpha = 1;
 }
 
