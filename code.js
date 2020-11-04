@@ -39,6 +39,7 @@ function draw() {
     hotspottype = document.getElementById("hotspottype").value;
     streaktype = document.getElementById("streaktype").value;
     iristype = document.getElementById("iristype").value;
+    halotype = document.getElementById("halotype").value;
 
     //clear old drawing
     ctx = canvas.getContext("2d");
@@ -50,6 +51,7 @@ function draw() {
     addArtifact("streakleft" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth + (flarecenter[0] - docWidth / 2) * 1.5) / 1.25, docHeight / 5);
     addArtifact("streakright" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth - (flarecenter[0] - docWidth / 2) * 1.5) / 1.25, docHeight / 5);
     addArtifact("hotspot" + hotspottype + ".png", flarecenter[0], flarecenter[1], docHeight / 4, docHeight / 4);
+    addArtifact("halo" + halotype + ".png", flarecenter[0], flarecenter[1], docHeight / 1.75, docHeight / 1.75);
     centeroffset = [flarecenter[0] - docWidth / 2, flarecenter[1] - docHeight / 2];
     ctx.globalAlpha = 0.125;
     addArtifact("iris" + iristype + ".png", docWidth / 2 - centeroffset[0], docHeight / 2 - centeroffset[1], docHeight / 1.25, docHeight / 1.25);
