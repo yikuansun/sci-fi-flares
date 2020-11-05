@@ -87,7 +87,7 @@ function photopea_build() {
     }
     /*imageData = ctx.getImageData(0, 0, docWidth, docHeight);
     buffer = imageData.data.buffer;*/
-    window.parent.postMessage(bytes, "*");
+    window.parent.postMessage(bytes.buffer, "*");
 }
 
 //only show photopea button if in iframe
