@@ -81,7 +81,7 @@ function draw() {
 function photopea_build() {
     imageData = ctx.getImageData(0, 0, docWidth, docHeight);
     buffer = imageData.data.buffer;
-    window.parent.postMessage(imageObj, "*");
+    window.parent.postMessage(buffer, "*");
 }
 
 //only show photopea button if in iframe
