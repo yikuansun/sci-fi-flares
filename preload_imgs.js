@@ -21,6 +21,7 @@ preload(
     "streakright1.png",
     "hotspot1.png",
     "iris1.png",
+    "halo1.png",
     "streakleft2.png",
     "streakright2.png",
     "halo2.png"
