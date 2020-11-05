@@ -80,8 +80,8 @@ function draw() {
 //send to photopea
 function photopea_build() {
     imageData = ctx.getImageData(0, 0, docWidth, docHeight);
-    buffer = new Uint32Array(imageData.data.buffer);
-    window.parent.postMessage(buffer, "*");
+    buffer = imageData.data.buffer;
+    window.parent.postMessage(imageData, "*");
 }
 
 //only show photopea button if in iframe
