@@ -35,11 +35,15 @@ var download = function(){
 
 function draw() {
     //read user input
+    hue = document.getElementById("hue").value;
     flarecenter = [parseFloat(document.getElementById("flarex").value), parseFloat(document.getElementById("flarey").value)];
     hotspottype = document.getElementById("hotspottype").value;
     streaktype = document.getElementById("streaktype").value;
     iristype = document.getElementById("iristype").value;
     halotype = document.getElementById("halotype").value;
+
+    //set filters
+    ctx.filter = "hue-rotate(" + hue + "deg)";
 
     //clear old drawing
     ctx = canvas.getContext("2d");
@@ -73,6 +77,7 @@ function draw() {
 }
 
 //update preview
+document.getElementById("hue").onchange = draw;
 document.getElementById("flarex").onchange = draw;
 document.getElementById("flarey").onchange = draw;
 document.getElementById("hotspottype").onchange = draw;
