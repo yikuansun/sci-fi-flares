@@ -80,7 +80,7 @@ function draw() {
 //send to photopea
 function photopea_build() {
     imageData = ctx.getImageData(0, 0, docWidth, docHeight);
-    buffer = new Unit32Array(imageData.data.buffer);
+    buffer = new Uint32Array(imageData.data.buffer);
     window.parent.postMessage(buffer, "*");
 }
 
