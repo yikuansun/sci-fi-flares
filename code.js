@@ -88,6 +88,7 @@ function photopea_build() {
     /*imageData = ctx.getImageData(0, 0, docWidth, docHeight);
     buffer = imageData.data.buffer;*/
     window.parent.postMessage(bytes.buffer, "*");
+    window.parent.postMessage("app.activeDocument.activeLayer.blendMode = 'lddg'", "*");
 }
 
 //only show photopea button if in iframe
