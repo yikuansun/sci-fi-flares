@@ -82,7 +82,7 @@ function photopea_build() {
     base64 = canvas.toDataURL("image/jpeg").split(';base64,')[1];
     binary_string = window.atob(base64);
     bytes = new Uint8Array(binary_string.length);
-    for (i = 0; i < len; i++) {
+    for (i = 0; i < binary_string.length; i++) {
         bytes[i] = binary_string.charCodeAt(i);
     }
     /*imageData = ctx.getImageData(0, 0, docWidth, docHeight);
