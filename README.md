@@ -15,4 +15,5 @@ Y position: 800<br />
 <img src="demoflare.jpg" />*Sample was downscaled from original result.
 
 # Issues (for development)
-Right now there could be more flare components and better positions for the irises.
+Right now there could be more flare components and better positions for the irises.<br />
+The Photopea build is currently not functional.
