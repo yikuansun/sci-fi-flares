@@ -76,6 +76,31 @@ function draw() {
     ctx.globalAlpha = 1;
 }
 
+
+//send to photopea
+function photopea_build() {
+    imageData = ctx.getImageData(x, y, w, h);
+    buffer = imageData.data.buffer;
+    window.parent.postMessage(buffer, "*");
+}
+
+//only show photopea button if in iframe
+function inIframe () {
+    try {
+        return window.self !== window.top;
+    } catch (e) {
+        return true;
+    }
+}
+
+//photopea thing
+if (inIframe()) {
+    photopea_button = document.createElement("button");
+    photopea_button.innerText = "Add to document (Photopea)";
+    document.getElementsByTagName("center")[0].appendChild(photopea_button);
+    photopea_button.onclick = photopea_build;
+}
+
 //update preview
 document.getElementById("hue").onchange = draw;
 document.getElementById("flarex").onchange = draw;
