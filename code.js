@@ -79,10 +79,9 @@ function draw() {
 
 //send to photopea
 function photopea_build() {
-    /*imageData = ctx.getImageData(0, 0, docWidth, docHeight);
+    imageData = ctx.getImageData(0, 0, docWidth, docHeight);
     buffer = imageData.data.buffer;
-    window.parent.postMessage(buffer, "*");*/
-    window.parent.postMessage("App.open('" + canvas.toDataURL("image/jpg") + "', 'wha', true)", "*")
+    window.parent.postMessage(buffer, "*");
 }
 
 //only show photopea button if in iframe
