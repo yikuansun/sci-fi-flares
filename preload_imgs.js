@@ -3,6 +3,8 @@ function preload() {
     for (var i = 0; i < arguments.length; i++) {
         images[i] = new Image();
         images[i].src = preload.arguments[i];
+        images[i].style.position = "fixed";
+        images[i].style.top, images[i].style.left = "-1000vmax";
         document.body.appendChild(images[i]);
         images[i].onload = function() { this.remove(); };
         if (i == arguments.length - 1) {
