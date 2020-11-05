@@ -73,7 +73,12 @@ function draw() {
 }
 
 //update preview
-document.getElementsByTagName("button")[0].onclick = draw;
+document.getElementById("flarex").onchange = draw;
+document.getElementById("flarey").onchange = draw;
+document.getElementById("hotspottype").onchange = draw;
+document.getElementById("streaktype").onchange = draw;
+document.getElementById("iristype").onchange = draw;
+document.getElementById("halotype").onchange = draw;
 //export overlay
-document.getElementsByTagName("button")[1].onclick = download;
+document.getElementsByTagName("button")[0].onclick = download;
 draw();
