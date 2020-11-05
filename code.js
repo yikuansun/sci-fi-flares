@@ -79,9 +79,8 @@ function draw() {
 
 //send to photopea
 function photopea_build() {
-    /*imageData = ctx.getImageData(0, 0, docWidth, docHeight);
-    buffer = imageData.data.buffer;*/
-    imageObj = new Image(canvas.toDataURL("image/jpg"));
+    imageData = ctx.getImageData(0, 0, docWidth, docHeight);
+    buffer = imageData.data.buffer;
     window.parent.postMessage(imageObj, "*");
 }
 
