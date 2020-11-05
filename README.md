@@ -12,7 +12,7 @@ Iris style: 1<br />
 Halo style: 1<br />
 X position: 1600<br />
 Y position: 800<br />
-<img src="demoflare.jpg" />
+<img src="demoflare.jpg" />*Sample was downscaled from original result.
 
 # Issues (for development)
 Right now there could be more flare components and better positions for the irises.
