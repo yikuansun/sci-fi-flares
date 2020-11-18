@@ -11,8 +11,8 @@ Go to <a href="https://www.photopea.com#%7B%22environment%22:%7B%22plugins%22:%5
 Document dimensions: 3840 * 2160<br />
 Hotspot style: 1<br />
 Streak style: 1<br />
-Iris style: 1<br />
-Halo style: 1<br />
+Iris style: 2<br />
+Halo style: 3<br />
 X position: 1600<br />
 Y position: 800<br />
 <img src="demoflare.jpg" />*Sample was downscaled from original result.
