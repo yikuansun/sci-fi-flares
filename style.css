@@ -22,3 +22,8 @@ canvas {
     height: 40vh;
     width: auto;
 }
+#banner {
+    width: 75vh;
+    height: 15vh;
+    object-fit: cover;
+}
