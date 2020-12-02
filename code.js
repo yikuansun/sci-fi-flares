@@ -1,6 +1,7 @@
 //initiate vars
-docWidth = parseFloat(location.search.split("canvaswidth=")[1]);
-docHeight = parseFloat(location.search.split("canvasheight=")[1]);
+pageURL = new URL(location.href);
+docWidth = parseFloat(pageURL.searchParams.get("canvaswidth"));
+docHeight = parseFloat(pageURL.searchParams.get("canvasheight"));
 
 //go back if url is not valid
 if (Number.isNaN(docWidth) || Number.isNaN(docHeight)) {
