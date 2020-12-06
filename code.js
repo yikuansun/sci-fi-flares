@@ -29,8 +29,8 @@ function addArtifact(imgsrc, centerx, centery, width, height) {
 //download link - thanks to https://stackoverflow.com/users/3986879/ulf-aslak
 var download = function(){
     var link = document.createElement("a");
-    link.download = "scififlare.jpg";
-    link.href = canvas.toDataURL("image/jpg");
+    link.download = "scififlare.png";
+    link.href = canvas.toDataURL("image/png");
     link.click();
 }
 
@@ -80,14 +80,12 @@ function draw() {
 
 //send to photopea
 function photopea_build() {
-    base64 = canvas.toDataURL("image/jpeg").split(';base64,')[1];
+    base64 = canvas.toDataURL("image/png").split(';base64,')[1];
     binary_string = window.atob(base64);
     bytes = new Uint8Array(binary_string.length);
     for (i = 0; i < binary_string.length; i++) {
         bytes[i] = binary_string.charCodeAt(i);
     }
-    /*imageData = ctx.getImageData(0, 0, docWidth, docHeight);
-    buffer = imageData.data.buffer;*/
     window.parent.postMessage(bytes.buffer, "*");
     window.parent.postMessage("app.activeDocument.activeLayer.blendMode = 'lddg'", "*");
 }
