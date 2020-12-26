@@ -53,10 +53,10 @@ function draw() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     //add elements
-    addArtifact("streakleft" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth + (flarecenter[0] - docWidth / 2) * 1.5) / 1.25, docHeight / 5);
-    addArtifact("streakright" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth - (flarecenter[0] - docWidth / 2) * 1.5) / 1.25, docHeight / 5);
-    addArtifact("hotspot" + hotspottype + ".png", flarecenter[0], flarecenter[1], docHeight / 4, docHeight / 4);
-    addArtifact("halo" + halotype + ".png", flarecenter[0], flarecenter[1], docHeight / 1.75, docHeight / 1.75);
+    addArtifact("textures/streakleft" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth + (flarecenter[0] - docWidth / 2) * 1.5) / 1.25, docHeight / 5);
+    addArtifact("textures/streakright" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth - (flarecenter[0] - docWidth / 2) * 1.5) / 1.25, docHeight / 5);
+    addArtifact("textures/hotspot" + hotspottype + ".png", flarecenter[0], flarecenter[1], docHeight / 4, docHeight / 4);
+    addArtifact("textures/halo" + halotype + ".png", flarecenter[0], flarecenter[1], docHeight / 1.75, docHeight / 1.75);
 
     Math.seedrandom(NaN);
 
@@ -69,7 +69,7 @@ function draw() {
         if (Math.random() < 0.35) {
             sclFac = Math.random() * (i / 30);
             ctx.globalAlpha = Math.random() / 3;
-            addArtifact("iris" + iristype + ".png", currentx, currenty, docHeight / 2.5 * sclFac, docHeight / 2.5 * sclFac);
+            addArtifact("textures/iris" + iristype + ".png", currentx, currenty, docHeight / 2.5 * sclFac, docHeight / 2.5 * sclFac);
             ctx.globalAlpha = 1;
         }
     }
@@ -83,7 +83,7 @@ function draw() {
         if (Math.random() < 0.35) {
             sclFac = Math.random() * (i / 30);
             ctx.globalAlpha = Math.random() / 3;
-            addArtifact("iris" + iristype + ".png", currentx, currenty, docHeight / 2.5 * sclFac, docHeight / 2.5 * sclFac);
+            addArtifact("textures/iris" + iristype + ".png", currentx, currenty, docHeight / 2.5 * sclFac, docHeight / 2.5 * sclFac);
             ctx.globalAlpha = 1;
         }
     }

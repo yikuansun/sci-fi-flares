@@ -19,14 +19,14 @@ function preload() {
 }
 
 preload(
-    "streakleft1.png",
-    "streakright1.png",
-    "hotspot1.png",
-    "iris1.png",
-    "halo1.png",
-    "streakleft2.png",
-    "streakright2.png",
-    "iris2.png",
-    "halo2.png",
-    "halo3.png"
+    "textures/streakleft1.png",
+    "textures/streakright1.png",
+    "textures/hotspot1.png",
+    "textures/iris1.png",
+    "textures/halo1.png",
+    "textures/streakleft2.png",
+    "textures/streakright2.png",
+    "textures/iris2.png",
+    "textures/halo2.png",
+    "textures/halo3.png"
 )
