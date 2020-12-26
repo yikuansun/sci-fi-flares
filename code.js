@@ -83,7 +83,7 @@ function draw() {
         // multi-iris away from camera
         currentx = flarecenter[0];
         currenty = flarecenter[1];
-        for (i = 0; i < 20; i++) {
+        for (i = 0; i < 15; i++) {
             currentx -= (docWidth / 2 - flarecenter[0]) / 20;
             currenty -= (docHeight / 2 - flarecenter[1]) / 20;
             if (Math.random() < 0.35) {
