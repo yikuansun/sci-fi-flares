@@ -63,7 +63,6 @@ function draw() {
     if (halotype != "None") {
         addArtifact("textures/halo" + halotype + ".png", flarecenter[0], flarecenter[1], docHeight / 1.75, docHeight / 1.75);
     }
-
     if (iristype != "None") {
         Math.seedrandom(NaN);
 
@@ -76,7 +75,7 @@ function draw() {
             if (Math.random() < 0.35) {
                 sclFac = Math.random() * (i / 30);
                 ctx.globalAlpha = Math.random() / 3;
-                addArtifact("textures/iris" + iristype + ".png", currentx, currenty, docHeight / 2.5 * sclFac, docHeight / 2.5 * sclFac);
+                addArtifact("textures/iris" + iristype + ".png", currentx, currenty, docHeight / 2 * sclFac, docHeight / 2 * sclFac);
                 ctx.globalAlpha = 1;
             }
         }
@@ -84,19 +83,18 @@ function draw() {
         // multi-iris away from camera
         currentx = flarecenter[0];
         currenty = flarecenter[1];
-        for (i = 0; i < 15; i++) {
+        for (i = 0; i < 20; i++) {
             currentx -= (docWidth / 2 - flarecenter[0]) / 20;
             currenty -= (docHeight / 2 - flarecenter[1]) / 20;
             if (Math.random() < 0.35) {
                 sclFac = Math.random() * (i / 30);
                 ctx.globalAlpha = Math.random() / 3;
-                addArtifact("textures/iris" + iristype + ".png", currentx, currenty, docHeight / 2.5 * sclFac, docHeight / 2.5 * sclFac);
+                addArtifact("textures/iris" + iristype + ".png", currentx, currenty, docHeight / 2 * sclFac, docHeight / 2 * sclFac);
                 ctx.globalAlpha = 1;
             }
         }
     }
 }
-
 
 //send to photopea
 function photopea_build() {
