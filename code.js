@@ -53,38 +53,46 @@ function draw() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     //add elements
-    addArtifact("textures/streakleft" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth + (flarecenter[0] - docWidth / 2) * 1.5) / 1.25, docHeight / 5);
-    addArtifact("textures/streakright" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth - (flarecenter[0] - docWidth / 2) * 1.5) / 1.25, docHeight / 5);
-    addArtifact("textures/hotspot" + hotspottype + ".png", flarecenter[0], flarecenter[1], docHeight / 4, docHeight / 4);
-    addArtifact("textures/halo" + halotype + ".png", flarecenter[0], flarecenter[1], docHeight / 1.75, docHeight / 1.75);
-
-    Math.seedrandom(NaN);
-
-    // multi-iris towards camera
-    currentx = flarecenter[0];
-    currenty = flarecenter[1];
-    for (i = 0; i < 50; i++) {
-        currentx += (docWidth / 2 - flarecenter[0]) / 20;
-        currenty += (docHeight / 2 - flarecenter[1]) / 20;
-        if (Math.random() < 0.35) {
-            sclFac = Math.random() * (i / 30);
-            ctx.globalAlpha = Math.random() / 3;
-            addArtifact("textures/iris" + iristype + ".png", currentx, currenty, docHeight / 2.5 * sclFac, docHeight / 2.5 * sclFac);
-            ctx.globalAlpha = 1;
-        }
+    if (streaktype != "None") {
+        addArtifact("textures/streakleft" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth + (flarecenter[0] - docWidth / 2) * 1.5) / 1.25, docHeight / 5);
+        addArtifact("textures/streakright" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth - (flarecenter[0] - docWidth / 2) * 1.5) / 1.25, docHeight / 5);
+    }
+    if (hotspottype != "None") {
+        addArtifact("textures/hotspot" + hotspottype + ".png", flarecenter[0], flarecenter[1], docHeight / 4, docHeight / 4);
+    }
+    if (halotype != "None") {
+        addArtifact("textures/halo" + halotype + ".png", flarecenter[0], flarecenter[1], docHeight / 1.75, docHeight / 1.75);
     }
 
-    // multi-iris away from camera
-    currentx = flarecenter[0];
-    currenty = flarecenter[1];
-    for (i = 0; i < 15; i++) {
-        currentx -= (docWidth / 2 - flarecenter[0]) / 20;
-        currenty -= (docHeight / 2 - flarecenter[1]) / 20;
-        if (Math.random() < 0.35) {
-            sclFac = Math.random() * (i / 30);
-            ctx.globalAlpha = Math.random() / 3;
-            addArtifact("textures/iris" + iristype + ".png", currentx, currenty, docHeight / 2.5 * sclFac, docHeight / 2.5 * sclFac);
-            ctx.globalAlpha = 1;
+    if (iristype != "None") {
+        Math.seedrandom(NaN);
+
+        // multi-iris towards camera
+        currentx = flarecenter[0];
+        currenty = flarecenter[1];
+        for (i = 0; i < 50; i++) {
+            currentx += (docWidth / 2 - flarecenter[0]) / 20;
+            currenty += (docHeight / 2 - flarecenter[1]) / 20;
+            if (Math.random() < 0.35) {
+                sclFac = Math.random() * (i / 30);
+                ctx.globalAlpha = Math.random() / 3;
+                addArtifact("textures/iris" + iristype + ".png", currentx, currenty, docHeight / 2.5 * sclFac, docHeight / 2.5 * sclFac);
+                ctx.globalAlpha = 1;
+            }
+        }
+
+        // multi-iris away from camera
+        currentx = flarecenter[0];
+        currenty = flarecenter[1];
+        for (i = 0; i < 15; i++) {
+            currentx -= (docWidth / 2 - flarecenter[0]) / 20;
+            currenty -= (docHeight / 2 - flarecenter[1]) / 20;
+            if (Math.random() < 0.35) {
+                sclFac = Math.random() * (i / 30);
+                ctx.globalAlpha = Math.random() / 3;
+                addArtifact("textures/iris" + iristype + ".png", currentx, currenty, docHeight / 2.5 * sclFac, docHeight / 2.5 * sclFac);
+                ctx.globalAlpha = 1;
+            }
         }
     }
 }
