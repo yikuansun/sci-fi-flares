@@ -26,12 +26,6 @@ function addArtifact(imgsrc, centerx, centery, width, height) {
     ctx.drawImage(image, x, y, width, height);
 }
 
-function addIris(imgsrc, offset_factor, offsetarray, downscale, alpha) {
-    ctx.globalAlpha = alpha;
-    addArtifact(imgsrc, docWidth / 2 - offset_factor * offsetarray[0], docHeight / 2 - offset_factor * offsetarray[1], docHeight / downscale, docHeight / downscale);
-    ctx.globalAlpha = 1;
-}
-
 //download link - thanks to https://stackoverflow.com/users/3986879/ulf-aslak
 var download = function(){
     var link = document.createElement("a");
@@ -63,15 +57,36 @@ function draw() {
     addArtifact("streakright" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth - (flarecenter[0] - docWidth / 2) * 1.5) / 1.25, docHeight / 5);
     addArtifact("hotspot" + hotspottype + ".png", flarecenter[0], flarecenter[1], docHeight / 4, docHeight / 4);
     addArtifact("halo" + halotype + ".png", flarecenter[0], flarecenter[1], docHeight / 1.75, docHeight / 1.75);
-    centeroffset = [docWidth / 2 - flarecenter[0], docHeight / 2 - flarecenter[1]];
-    addIris("iris" + iristype + ".png", -1, centeroffset, 1.25, 0.125);
-    addIris("iris" + iristype + ".png", -0.5, centeroffset, 2.5, 0.25);
-    addIris("iris" + iristype + ".png", 0, centeroffset, 5, 0.5);
-    addIris("iris" + iristype + ".png", 0.5, centeroffset, 10, 0.5);
-    addIris("iris" + iristype + ".png", 1.25, centeroffset, 20, 0.8);
-    addIris("iris" + iristype + ".png", 1.5, centeroffset, 10, 0.4);
-    addIris("iris" + iristype + ".png", 1.75, centeroffset, 5, 0.2);
-    addIris("iris" + iristype + ".png", 2, centeroffset, 2.5, 0.1);
+
+    Math.seedrandom(NaN);
+
+    // multi-iris towards camera
+    currentx = flarecenter[0];
+    currenty = flarecenter[1];
+    for (i = 0; i < 50; i++) {
+        currentx += (docWidth / 2 - flarecenter[0]) / 20;
+        currenty += (docHeight / 2 - flarecenter[1]) / 20;
+        if (Math.random() < 0.35) {
+            sclFac = Math.random() * (i / 30);
+            ctx.globalAlpha = Math.random() / 3;
+            addArtifact("iris" + iristype + ".png", currentx, currenty, docHeight / 2.5 * sclFac, docHeight / 2.5 * sclFac);
+            ctx.globalAlpha = 1;
+        }
+    }
+
+    // multi-iris away from camera
+    currentx = flarecenter[0];
+    currenty = flarecenter[1];
+    for (i = 0; i < 15; i++) {
+        currentx -= (docWidth / 2 - flarecenter[0]) / 20;
+        currenty -= (docHeight / 2 - flarecenter[1]) / 20;
+        if (Math.random() < 0.35) {
+            sclFac = Math.random() * (i / 30);
+            ctx.globalAlpha = Math.random() / 3;
+            addArtifact("iris" + iristype + ".png", currentx, currenty, docHeight / 2.5 * sclFac, docHeight / 2.5 * sclFac);
+            ctx.globalAlpha = 1;
+        }
+    }
 }
 
 
