@@ -74,7 +74,7 @@ function draw() {
             currenty += (docHeight / 2 - flarecenter[1]) / 20;
             if (Math.random() < 0.35) {
                 sclFac = Math.random() * (i / 30);
-                ctx.globalAlpha = Math.random() / 3;
+                ctx.globalAlpha = Math.random() / 2;
                 addArtifact("textures/iris" + iristype + ".png", currentx, currenty, docHeight / 2 * sclFac, docHeight / 2 * sclFac);
                 ctx.globalAlpha = 1;
             }
@@ -88,7 +88,7 @@ function draw() {
             currenty -= (docHeight / 2 - flarecenter[1]) / 20;
             if (Math.random() < 0.35) {
                 sclFac = Math.random() * (i / 30);
-                ctx.globalAlpha = Math.random() / 3;
+                ctx.globalAlpha = Math.random() / 2;
                 addArtifact("textures/iris" + iristype + ".png", currentx, currenty, docHeight / 2 * sclFac, docHeight / 2 * sclFac);
                 ctx.globalAlpha = 1;
             }
