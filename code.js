@@ -43,11 +43,10 @@ function draw() {
     streaktype = componenttable.rows[2].cells[1].children[0].value;
     iristype = componenttable.rows[3].cells[1].children[0].value;
     halotype = componenttable.rows[4].cells[1].children[0].value;
-    hotspotscale = parseFloat(componenttable.rows[1].cells[2].children[0].value);
-    streakscale = parseFloat(componenttable.rows[2].cells[2].children[0].value);
-    irisscale = parseFloat(componenttable.rows[3].cells[2].children[0].value);
-    haloscale = parseFloat(componenttable.rows[4].cells[2].children[0].value);
-    streakheight = parseFloat(document.getElementById("streakheight").value);
+    hotspotscale = [parseFloat(componenttable.rows[1].cells[2].children[0].value), parseFloat(componenttable.rows[1].cells[3].children[0].value)];
+    streakscale = [parseFloat(componenttable.rows[2].cells[2].children[0].value), parseFloat(componenttable.rows[2].cells[3].children[0].value)];
+    irisscale = [parseFloat(componenttable.rows[3].cells[2].children[0].value), parseFloat(componenttable.rows[3].cells[3].children[0].value)];
+    haloscale = [parseFloat(componenttable.rows[4].cells[2].children[0].value), parseFloat(componenttable.rows[4].cells[3].children[0].value)];
 
     //set filters
     ctx.filter = "hue-rotate(" + hue + "deg)";
@@ -60,14 +59,14 @@ function draw() {
 
     //add elements
     if (streaktype != "None") {
-        addArtifact("textures/streakleft" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth + (flarecenter[0] - docWidth / 2) * 1.5) / 1.25 * streakscale, docHeight / 5 * streakheight);
-        addArtifact("textures/streakright" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth - (flarecenter[0] - docWidth / 2) * 1.5) / 1.25 * streakscale, docHeight / 5 * streakheight);
+        addArtifact("textures/streakleft" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth + (flarecenter[0] - docWidth / 2) * 1.5) / 1.25 * streakscale[0], docHeight / 5 * streakscale[1]);
+        addArtifact("textures/streakright" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth - (flarecenter[0] - docWidth / 2) * 1.5) / 1.25 * streakscale[0], docHeight / 5 * streakscale[1]);
     }
     if (hotspottype != "None") {
-        addArtifact("textures/hotspot" + hotspottype + ".png", flarecenter[0], flarecenter[1], docHeight / 4 * hotspotscale, docHeight / 4 * hotspotscale);
+        addArtifact("textures/hotspot" + hotspottype + ".png", flarecenter[0], flarecenter[1], docHeight / 4 * hotspotscale[0], docHeight / 4 * hotspotscale[1]);
     }
     if (halotype != "None") {
-        addArtifact("textures/halo" + halotype + ".png", flarecenter[0], flarecenter[1], docHeight / 1.75 * haloscale, docHeight / 1.75 * haloscale);
+        addArtifact("textures/halo" + halotype + ".png", flarecenter[0], flarecenter[1], docHeight / 1.75 * haloscale[0], docHeight / 1.75 * haloscale[1]);
     }
     if (iristype != "None") {
         Math.seedrandom(NaN);
@@ -81,7 +80,7 @@ function draw() {
             if (Math.random() < 0.35) {
                 sclFac = Math.random() * (i / 30);
                 ctx.globalAlpha = Math.random() / 2;
-                addArtifact("textures/iris" + iristype + ".png", currentx, currenty, docHeight / 2 * sclFac * irisscale, docHeight / 2 * sclFac * irisscale);
+                addArtifact("textures/iris" + iristype + ".png", currentx, currenty, docHeight / 2 * sclFac * irisscale[0], docHeight / 2 * sclFac * irisscale[1]);
                 ctx.globalAlpha = 1;
             }
         }
@@ -95,7 +94,7 @@ function draw() {
             if (Math.random() < 0.35) {
                 sclFac = Math.random() * (i / 30);
                 ctx.globalAlpha = Math.random() / 2;
-                addArtifact("textures/iris" + iristype + ".png", currentx, currenty, docHeight / 2 * sclFac * irisscale, docHeight / 2 * sclFac * irisscale);
+                addArtifact("textures/iris" + iristype + ".png", currentx, currenty, docHeight / 2 * sclFac * irisscale[0], docHeight / 2 * sclFac * irisscale[1]);
                 ctx.globalAlpha = 1;
             }
         }
