@@ -9,7 +9,7 @@ input, select {
     color: white;
 }
 input[type=number] {
-    width: 69px;
+    width: 100px;
 }
 button {
     background-color: #000055;
