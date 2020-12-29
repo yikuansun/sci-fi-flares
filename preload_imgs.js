@@ -26,6 +26,7 @@ preload(
     "textures/halo1.png",
     "textures/streakleft2.png",
     "textures/streakright2.png",
+    "textures/hotspot2.png",
     "textures/iris2.png",
     "textures/halo2.png",
     "textures/halo3.png"
