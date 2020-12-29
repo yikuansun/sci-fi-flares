@@ -47,6 +47,7 @@ function draw() {
     streakscale = parseFloat(componenttable.rows[2].cells[2].children[0].value);
     irisscale = parseFloat(componenttable.rows[3].cells[2].children[0].value);
     haloscale = parseFloat(componenttable.rows[4].cells[2].children[0].value);
+    streakheight = parseFloat(document.getElementById("streakheight").value);
 
     //set filters
     ctx.filter = "hue-rotate(" + hue + "deg)";
@@ -59,8 +60,8 @@ function draw() {
 
     //add elements
     if (streaktype != "None") {
-        addArtifact("textures/streakleft" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth + (flarecenter[0] - docWidth / 2) * 1.5) / 1.25 * streakscale, docHeight / 5);
-        addArtifact("textures/streakright" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth - (flarecenter[0] - docWidth / 2) * 1.5) / 1.25 * streakscale, docHeight / 5);
+        addArtifact("textures/streakleft" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth + (flarecenter[0] - docWidth / 2) * 1.5) / 1.25 * streakscale, docHeight / 5 * streakheight);
+        addArtifact("textures/streakright" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth - (flarecenter[0] - docWidth / 2) * 1.5) / 1.25 * streakscale, docHeight / 5 * streakheight);
     }
     if (hotspottype != "None") {
         addArtifact("textures/hotspot" + hotspottype + ".png", flarecenter[0], flarecenter[1], docHeight / 4 * hotspotscale, docHeight / 4 * hotspotscale);
