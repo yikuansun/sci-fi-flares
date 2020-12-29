@@ -8,6 +8,9 @@ input, select {
     font-family: 'Orbitron', sans-serif;
     color: white;
 }
+input[type=number] {
+    width: 69px;
+}
 button {
     background-color: #000055;
     font-family: 'Orbitron', sans-serif;
@@ -26,4 +29,8 @@ canvas {
     width: 75vh;
     height: 15vh;
     object-fit: cover;
+}
+th {
+    text-align: center;
+    font-size: x-small;
 }

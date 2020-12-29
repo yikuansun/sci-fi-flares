@@ -36,12 +36,17 @@ var download = function(){
 
 function draw() {
     //read user input
+    componenttable = document.querySelector("table");
     hue = document.getElementById("hue").value;
     flarecenter = [parseFloat(document.getElementById("flarex").value), parseFloat(document.getElementById("flarey").value)];
-    hotspottype = document.getElementById("hotspottype").value;
-    streaktype = document.getElementById("streaktype").value;
-    iristype = document.getElementById("iristype").value;
-    halotype = document.getElementById("halotype").value;
+    hotspottype = componenttable.rows[1].cells[1].children[0].value;
+    streaktype = componenttable.rows[2].cells[1].children[0].value;
+    iristype = componenttable.rows[3].cells[1].children[0].value;
+    halotype = componenttable.rows[4].cells[1].children[0].value;
+    hotspotscale = parseFloat(componenttable.rows[1].cells[2].children[0].value);
+    streakscale = parseFloat(componenttable.rows[2].cells[2].children[0].value);
+    irisscale = parseFloat(componenttable.rows[3].cells[2].children[0].value);
+    haloscale = parseFloat(componenttable.rows[4].cells[2].children[0].value);
 
     //set filters
     ctx.filter = "hue-rotate(" + hue + "deg)";
@@ -54,14 +59,14 @@ function draw() {
 
     //add elements
     if (streaktype != "None") {
-        addArtifact("textures/streakleft" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth + (flarecenter[0] - docWidth / 2) * 1.5) / 1.25, docHeight / 5);
-        addArtifact("textures/streakright" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth - (flarecenter[0] - docWidth / 2) * 1.5) / 1.25, docHeight / 5);
+        addArtifact("textures/streakleft" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth + (flarecenter[0] - docWidth / 2) * 1.5) / 1.25 * streakscale, docHeight / 5);
+        addArtifact("textures/streakright" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth - (flarecenter[0] - docWidth / 2) * 1.5) / 1.25 * streakscale, docHeight / 5);
     }
     if (hotspottype != "None") {
-        addArtifact("textures/hotspot" + hotspottype + ".png", flarecenter[0], flarecenter[1], docHeight / 4, docHeight / 4);
+        addArtifact("textures/hotspot" + hotspottype + ".png", flarecenter[0], flarecenter[1], docHeight / 4 * hotspotscale, docHeight / 4 * hotspotscale);
     }
     if (halotype != "None") {
-        addArtifact("textures/halo" + halotype + ".png", flarecenter[0], flarecenter[1], docHeight / 1.75, docHeight / 1.75);
+        addArtifact("textures/halo" + halotype + ".png", flarecenter[0], flarecenter[1], docHeight / 1.75 * haloscale, docHeight / 1.75 * haloscale);
     }
     if (iristype != "None") {
         Math.seedrandom(NaN);
@@ -69,13 +74,13 @@ function draw() {
         // multi-iris towards camera
         currentx = flarecenter[0];
         currenty = flarecenter[1];
-        for (i = 0; i < 50; i++) {
+        for (i = 0; i < 45; i++) {
             currentx += (docWidth / 2 - flarecenter[0]) / 20;
             currenty += (docHeight / 2 - flarecenter[1]) / 20;
             if (Math.random() < 0.35) {
                 sclFac = Math.random() * (i / 30);
                 ctx.globalAlpha = Math.random() / 2;
-                addArtifact("textures/iris" + iristype + ".png", currentx, currenty, docHeight / 2 * sclFac, docHeight / 2 * sclFac);
+                addArtifact("textures/iris" + iristype + ".png", currentx, currenty, docHeight / 2 * sclFac * irisscale, docHeight / 2 * sclFac * irisscale);
                 ctx.globalAlpha = 1;
             }
         }
@@ -89,7 +94,7 @@ function draw() {
             if (Math.random() < 0.35) {
                 sclFac = Math.random() * (i / 30);
                 ctx.globalAlpha = Math.random() / 2;
-                addArtifact("textures/iris" + iristype + ".png", currentx, currenty, docHeight / 2 * sclFac, docHeight / 2 * sclFac);
+                addArtifact("textures/iris" + iristype + ".png", currentx, currenty, docHeight / 2 * sclFac * irisscale, docHeight / 2 * sclFac * irisscale);
                 ctx.globalAlpha = 1;
             }
         }
@@ -126,13 +131,9 @@ if (inIframe()) {
 }
 
 //update preview
-document.getElementById("hue").onchange = draw;
-document.getElementById("flarex").onchange = draw;
-document.getElementById("flarey").onchange = draw;
-document.getElementById("hotspottype").onchange = draw;
-document.getElementById("streaktype").onchange = draw;
-document.getElementById("iristype").onchange = draw;
-document.getElementById("halotype").onchange = draw;
+for (inputbox of document.querySelectorAll("select, input[type=number], input[type=range]")) {
+    inputbox.onchange = draw;
+}
 //export overlay
 document.getElementsByTagName("button")[0].onclick = download;
 draw();
