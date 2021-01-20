@@ -23,7 +23,7 @@ function addArtifact(imgsrc, centerx, centery, width, height) {
     x = centerx - width/2;
     y = centery - height/2;
     ctx = canvas.getContext("2d");
-    ctx.drawImage(image, x, y, width, height);
+    ctx.drawImage(image, Math.round(x), Math.round(y), Math.round(width), Math.round(height));
 }
 
 //download link - thanks to https://stackoverflow.com/users/3986879/ulf-aslak
