@@ -2,10 +2,10 @@
 	"plugins" : [ 
 		{
 			"name"  : "Sci-Fi Flares By Yikuan Sun",
-			"url"   : "https://scififlares.netlify.app/",
+			"url"   : "https://yikuansun.github.io/sci-fi-flares/",
 			"width" : 400,
 			"height": 500,
-			"icon"  : "https://scififlares.netlify.app/icon.png"
+			"icon"  : "https://yikuansun.github.io/sci-fi-flares/icon.png"
 		}
 	]
 } }
