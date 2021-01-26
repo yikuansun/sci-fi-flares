@@ -106,9 +106,11 @@ for (collapsable of document.querySelectorAll("#Hotspot, #Streak, #Iris, #Halo")
     document.getElementById(collapsable.id + "_handle").setAttribute("onclick", `
     if (document.getElementById('` + collapsable.id + `').style.display == 'none') {
         document.getElementById('` + collapsable.id + `').style.display = 'block';
+        this.innerHTML = '&#x25BE; ` + collapsable.id + `';
     }
     else {
         document.getElementById('` + collapsable.id + `').style.display = 'none';
+        this.innerHTML = '&#x25B8; ` + collapsable.id + `';
     }
     `);
 }
