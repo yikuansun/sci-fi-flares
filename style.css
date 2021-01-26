@@ -34,3 +34,6 @@ th {
     text-align: center;
     font-size: x-small;
 }
+#Hotspot, #Streak, #Iris, #Halo {
+    display: none;
+}
