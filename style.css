@@ -21,11 +21,8 @@ button {
     cursor: pointer;
 }
 canvas {
-    height: 50vh;
-}
-#flarepreview {
-    height: 40vh;
-    width: auto;
+    max-width: 90%;
+    max-height: 90%;
 }
 #banner {
     width: 75vh;
