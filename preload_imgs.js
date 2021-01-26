@@ -30,5 +30,6 @@ preload(
     "textures/iris2.png",
     "textures/halo2.png",
     "textures/iris3.png",
-    "textures/halo3.png"
+    "textures/halo3.png",
+    "textures/halo4.png"
 )
