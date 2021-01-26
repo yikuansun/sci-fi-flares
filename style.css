@@ -38,6 +38,7 @@ canvas {
 }
 #Hotspot_handle, #Streak_handle, #Iris_handle, #Halo_handle {
     margin-left: 5px;
+    cursor: pointer;
 }
 table {
     width: 100vw;
