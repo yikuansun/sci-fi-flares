@@ -36,17 +36,16 @@ var download = function(){
 
 function draw() {
     //read user input
-    componenttable = document.querySelector("table");
     hue = document.getElementById("hue").value;
     flarecenter = [parseFloat(document.getElementById("flarex").value), parseFloat(document.getElementById("flarey").value)];
-    hotspottype = componenttable.rows[1].cells[1].children[0].value;
-    streaktype = componenttable.rows[2].cells[1].children[0].value;
-    iristype = componenttable.rows[3].cells[1].children[0].value;
-    halotype = componenttable.rows[4].cells[1].children[0].value;
-    hotspotscale = [parseFloat(componenttable.rows[1].cells[2].children[0].value), parseFloat(componenttable.rows[1].cells[3].children[0].value)];
-    streakscale = [parseFloat(componenttable.rows[2].cells[2].children[0].value), parseFloat(componenttable.rows[2].cells[3].children[0].value)];
-    irisscale = [parseFloat(componenttable.rows[3].cells[2].children[0].value), parseFloat(componenttable.rows[3].cells[3].children[0].value)];
-    haloscale = [parseFloat(componenttable.rows[4].cells[2].children[0].value), parseFloat(componenttable.rows[4].cells[3].children[0].value)];
+    hotspottype = document.querySelector("#Hotspot select").value;
+    streaktype = document.querySelector("#Streak select").value;
+    iristype = document.querySelector("#Iris select").value;
+    halotype = document.querySelector("#Halo select").value;
+    hotspotscale = Array.from(document.querySelectorAll("#Hotspot input[type=number]")).map(x => parseFloat(x.value));
+    streakscale = Array.from(document.querySelectorAll("#Streak input[type=number]")).map(x => parseFloat(x.value));
+    irisscale = Array.from(document.querySelectorAll("#Iris input[type=number]")).map(x => parseFloat(x.value));
+    haloscale = Array.from(document.querySelectorAll("#Halo input[type=number]")).map(x => parseFloat(x.value));
 
     //set filters
     ctx.filter = "hue-rotate(" + hue + "deg)";
