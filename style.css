@@ -40,7 +40,8 @@ canvas {
     margin-left: 5px;
 }
 table {
-    width: 80%;
+    width: 100vw;
+    height: 100vh;
     margin: auto;
 }
 select, input[type=number] {
