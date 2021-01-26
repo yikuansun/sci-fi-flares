@@ -46,6 +46,7 @@ function draw() {
     streakscale = Array.from(document.querySelectorAll("#Streak input[type=number]")).map(x => parseFloat(x.value));
     irisscale = Array.from(document.querySelectorAll("#Iris input[type=number]")).map(x => parseFloat(x.value));
     haloscale = Array.from(document.querySelectorAll("#Halo input[type=number]")).map(x => parseFloat(x.value));
+    streakbalance = parseFloat(document.querySelectorAll("#Streak input[type=number]")[2].value);
 
     //set filters
     ctx.filter = "hue-rotate(" + hue + "deg)";
@@ -58,8 +59,8 @@ function draw() {
 
     //add elements
     if (streaktype != "None") {
-        addArtifact("textures/streakleft" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth + (flarecenter[0] - docWidth / 2) * 1.5) / 1.25 * streakscale[0], docHeight / 5 * streakscale[1]);
-        addArtifact("textures/streakright" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth - (flarecenter[0] - docWidth / 2) * 1.5) / 1.25 * streakscale[0], docHeight / 5 * streakscale[1]);
+        addArtifact("textures/streakleft" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth + (flarecenter[0] - docWidth / 2) * streakbalance) / 1.25 * streakscale[0], docHeight / 5 * streakscale[1]);
+        addArtifact("textures/streakright" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth - (flarecenter[0] - docWidth / 2) * streakbalance) / 1.25 * streakscale[0], docHeight / 5 * streakscale[1]);
     }
     if (hotspottype != "None") {
         addArtifact("textures/hotspot" + hotspottype + ".png", flarecenter[0], flarecenter[1], docHeight / 2.7 * hotspotscale[0], docHeight / 2.7 * hotspotscale[1]);
