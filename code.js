@@ -127,8 +127,17 @@ function photopea_build() {
     window.parent.postMessage("app.activeDocument.activeLayer.blendMode = 'lddg'", "*");
 }
 
+//only show photopea button if in iframe
+function inIframe () {
+    try {
+        return window.self !== window.top;
+    } catch (e) {
+        return true;
+    }
+}
+
 //photopea thing
-if (window.parent.location.host == "www.photopea.com") {
+if (inIframe()) {
     photopea_button = document.createElement("button");
     photopea_button.innerText = "Add to document (Photopea)";
     document.getElementById("optionspannel").appendChild(photopea_button);
