@@ -74,11 +74,11 @@ function draw() {
         // multi-iris towards camera
         currentx = flarecenter[0];
         currenty = flarecenter[1];
-        for (i = 0; i < 45; i++) {
-            currentx += (docWidth / 2 - flarecenter[0]) / 20;
-            currenty += (docHeight / 2 - flarecenter[1]) / 20;
+        for (i = 0; i < 55; i++) {
+            currentx += (docWidth / 2 - flarecenter[0]) / 30;
+            currenty += (docHeight / 2 - flarecenter[1]) / 30;
             if (Math.random() < 0.35) {
-                sclFac = Math.random() * (i / 30);
+                sclFac = Math.random() * (i / 45);
                 ctx.globalAlpha = Math.random() / 2;
                 addArtifact("textures/iris" + iristype + ".png", currentx, currenty, docHeight / 2 * sclFac * irisscale[0], docHeight / 2 * sclFac * irisscale[1]);
                 ctx.globalAlpha = 1;
@@ -88,11 +88,11 @@ function draw() {
         // multi-iris away from camera
         currentx = flarecenter[0];
         currenty = flarecenter[1];
-        for (i = 0; i < 15; i++) {
-            currentx -= (docWidth / 2 - flarecenter[0]) / 20;
-            currenty -= (docHeight / 2 - flarecenter[1]) / 20;
+        for (i = 0; i < 25; i++) {
+            currentx -= (docWidth / 2 - flarecenter[0]) / 30;
+            currenty -= (docHeight / 2 - flarecenter[1]) / 30;
             if (Math.random() < 0.35) {
-                sclFac = Math.random() * (i / 30);
+                sclFac = Math.random() * (i / 45);
                 ctx.globalAlpha = Math.random() / 2;
                 addArtifact("textures/iris" + iristype + ".png", currentx, currenty, docHeight / 2 * sclFac * irisscale[0], docHeight / 2 * sclFac * irisscale[1]);
                 ctx.globalAlpha = 1;
