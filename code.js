@@ -140,7 +140,7 @@ function inIframe () {
 if (inIframe()) {
     photopea_button = document.createElement("button");
     photopea_button.innerText = "Add to document (Photopea)";
-    document.getElementsByTagName("td")[1].appendChild(photopea_button);
+    document.getElementsByTagName("td")[0].appendChild(photopea_button);
     photopea_button.onclick = photopea_build;
 }
 
