@@ -39,12 +39,9 @@ canvas {
 #Hotspot_handle, #Streak_handle, #Iris_handle, #Halo_handle {
     margin-left: 5px;
 }
-td {
-    width: 50%;
-    vertical-align: top;
-}
 table {
-    width: 100%;
+    width: 80%;
+    margin: auto;
 }
 select, input[type=number] {
     width: 50px;
