@@ -1,20 +1,20 @@
 body {
     background-color: black;
-    font-family: 'Orbitron', sans-serif;
-    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #AAAAAA;
 }
 input, select {
     background-color: #000055;
-    font-family: 'Orbitron', sans-serif;
-    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #AAAAAA;
 }
 input[type=number] {
     width: 100px;
 }
 button {
     background-color: #000055;
-    font-family: 'Orbitron', sans-serif;
-    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #AAAAAA;
     cursor: pointer;
 }
 canvas {
