@@ -42,7 +42,7 @@ table {
     height: 100vh;
     margin: auto;
 }
-select, input[type=number] {
+select, input[type=number], input[type=text] {
     width: 50px;
 }
 #optionspannel {
