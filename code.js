@@ -47,6 +47,7 @@ function draw() {
     irisscale = Array.from(document.querySelectorAll("#Iris input[type=number]")).map(x => parseFloat(x.value));
     haloscale = Array.from(document.querySelectorAll("#Halo input[type=number]")).map(x => parseFloat(x.value));
     streakbalance = parseFloat(document.querySelectorAll("#Streak input[type=number]")[2].value);
+    seed = document.querySelectorAll("#Iris input[type=text]")[0].value;
 
     //set filters
     ctx.filter = "hue-rotate(" + hue + "deg)";
@@ -69,7 +70,7 @@ function draw() {
         addArtifact("textures/halo" + halotype + ".png", flarecenter[0], flarecenter[1], docHeight / 1.75 * haloscale[0], docHeight / 1.75 * haloscale[1]);
     }
     if (iristype != "None") {
-        Math.seedrandom(NaN);
+        Math.seedrandom(seed);
 
         // multi-iris towards camera
         currentx = flarecenter[0];
@@ -78,7 +79,7 @@ function draw() {
             currentx += (docWidth / 2 - flarecenter[0]) / 30;
             currenty += (docHeight / 2 - flarecenter[1]) / 30;
             if (Math.random() < 0.35) {
-                sclFac = Math.random() * (i / 45);
+                sclFac = Math.random() * (i / 50);
                 ctx.globalAlpha = Math.random() / 2;
                 addArtifact("textures/iris" + iristype + ".png", currentx, currenty, docHeight / 2 * sclFac * irisscale[0], docHeight / 2 * sclFac * irisscale[1]);
                 ctx.globalAlpha = 1;
@@ -92,7 +93,7 @@ function draw() {
             currentx -= (docWidth / 2 - flarecenter[0]) / 30;
             currenty -= (docHeight / 2 - flarecenter[1]) / 30;
             if (Math.random() < 0.35) {
-                sclFac = Math.random() * (i / 45);
+                sclFac = Math.random() * (i / 50);
                 ctx.globalAlpha = Math.random() / 2;
                 addArtifact("textures/iris" + iristype + ".png", currentx, currenty, docHeight / 2 * sclFac * irisscale[0], docHeight / 2 * sclFac * irisscale[1]);
                 ctx.globalAlpha = 1;
@@ -146,7 +147,7 @@ if (inIframe()) {
 }
 
 //update preview
-for (inputbox of document.querySelectorAll("select, input[type=number], input[type=range]")) {
+for (inputbox of document.querySelectorAll("select, input[type=number], input[type=range], input[type=text]")) {
     inputbox.onchange = draw;
 }
 //export overlay
