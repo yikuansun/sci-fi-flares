@@ -100,6 +100,19 @@ function draw() {
     }
 }
 
+//collapsable stuff
+for (collapsable of document.querySelectorAll("#Hotspot, #Streak, #Iris, #Halo")) {
+    collapsable.style.display = "none";
+    document.getElementById(collapsable.id + "_handle").setAttribute("onclick", `
+    if (document.getElementById('` + collapsable.id + `').style.display == 'none') {
+        document.getElementById('` + collapsable.id + `').style.display = 'block';
+    }
+    else {
+        document.getElementById('` + collapsable.id + `').style.display = 'none';
+    }
+    `);
+}
+
 //send to photopea
 function photopea_build() {
     base64 = canvas.toDataURL("image/png").split(';base64,')[1];
