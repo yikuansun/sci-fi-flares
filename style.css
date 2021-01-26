@@ -2,6 +2,9 @@ body {
     background-color: black;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #AAAAAA;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
 }
 input, select {
     background-color: #000055;
@@ -18,8 +21,7 @@ button {
     cursor: pointer;
 }
 canvas {
-    height: 40vh;
-    width: auto;
+    width: 100%;
 }
 #flarepreview {
     height: 40vh;
@@ -30,10 +32,21 @@ canvas {
     height: 15vh;
     object-fit: cover;
 }
-th {
-    text-align: center;
-    font-size: x-small;
-}
 #Hotspot, #Streak, #Iris, #Halo {
     display: none;
+    margin-left: 20px;
+}
+#Hotspot_handle, #Streak_handle, #Iris_handle, #Halo_handle {
+    margin-left: 5px;
+}
+td {
+    width: 50%;
+    vertical-align: top;
+}
+table {
+    width: 80%;
+    margin: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
