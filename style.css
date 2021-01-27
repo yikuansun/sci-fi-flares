@@ -11,9 +11,6 @@ input, select {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #AAAAAA;
 }
-input[type=number] {
-    width: 100px;
-}
 button {
     background-color: #000055;
     font-family: Verdana, Geneva, Tahoma, sans-serif;

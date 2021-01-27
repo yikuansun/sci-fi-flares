@@ -124,6 +124,22 @@ function setPreset(hue, hotspottype, hotspotscale, streaktype, streakscale, stre
     draw();
 }
 
+presets = {
+    "Default": [0, 1, [1, 1], 1, [1, 1], 1.5, 1, [1, 1], "hii", 1, [1, 1]],
+    "Brightest Beam": [0, 2, [1, 1], 3, [2, 1], 1, 2, [1, 1], "hii", 4, [1, 1]],
+    "Cinematic Streak": [110, "None", [1, 1], 1, [0.69, 0.69], 0, 3, [0.69, 0.69], "yo", 2, [0.69, 0.69]],
+    "Lavish Laser": [-150, 1, [1, 1], 2, [1.5, 1], 1.5, 1, [1, 1], "hi", 4, [1, 1]],
+    "Full Flashlight": [40, 1, [1, 1], 1, [1, 1], 1, 1, [1, 1], "hiii", 3, [1, 1]]
+};
+
+document.getElementById("preset").style.width = "150px";
+for (presetname in presets) {
+    optionelem = document.createElement("option");
+    optionelem.innerText = presetname;
+    document.getElementById("preset").appendChild(optionelem);
+}
+document.getElementById("preset").addEventListener("input", function() { setPreset.apply(null, presets[this.value]); });
+
 //collapsable stuff
 for (collapsable of document.querySelectorAll("#Hotspot, #Streak, #Iris, #Halo")) {
     collapsable.style.display = "none";
