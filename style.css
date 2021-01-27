@@ -48,3 +48,9 @@ select, input[type=number], input[type=text] {
     position: relative;
     width: 250px;
 }
+#hue {
+    outline: none;
+    -webkit-appearance: none;
+    background: linear-gradient(to right, hsl(-180, 100%, 50%), hsl(-150, 100%, 50%), hsl(-120, 100%, 50%), hsl(-90, 100%, 50%), hsl(-60, 100%, 50%), hsl(-30, 100%, 50%), hsl(0, 100%, 50%), hsl(30, 100%, 50%), hsl(60, 100%, 50%), hsl(90, 100%, 50%), hsl(120, 100%, 50%), hsl(150, 100%, 50%), hsl(180, 100%, 50%));
+    border-radius: 100px;
+}
