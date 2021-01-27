@@ -108,7 +108,20 @@ function draw() {
 
 //presets
 function setPreset(hue, hotspottype, hotspotscale, streaktype, streakscale, streakbalance, iristype, irisscale, seed, halotype, haloscale) {
-
+    document.getElementById("hue").value = hue;
+    document.querySelector("#Hotspot select").value = hotspottype;
+    document.querySelector("#Streak select").value = streaktype;
+    document.querySelector("#Iris select").value = iristype;
+    document.querySelector("#Halo select").value = halotype;
+    for (i = 0; i < 2; i++) {
+        document.querySelectorAll("#Hotspot input[type=number]")[i].value = hotspotscale[i];
+        document.querySelectorAll("#Streak input[type=number]")[i].value = streakscale[i];
+        document.querySelectorAll("#Iris input[type=number]")[i].value = irisscale[i];
+        document.querySelectorAll("#Halo input[type=number]")[i].value = haloscale[i];
+    }
+    document.querySelectorAll("#Streak input[type=number]")[2].value = streakbalance;
+    document.querySelectorAll("#Iris input[type=text]")[0].value = seed;
+    draw();
 }
 
 //collapsable stuff
