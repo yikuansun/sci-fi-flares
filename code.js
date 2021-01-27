@@ -17,12 +17,11 @@ ctx = canvas.getContext("2d");
 ctx.globalCompositeOperation = "lighter";
 
 function addArtifact(imgsrc, centerx, centery, width, height) {
-    image = new Image();
+    var image = new Image();
     image.src = imgsrc;
     //position by centerpoint
-    x = centerx - width/2;
-    y = centery - height/2;
-    ctx = canvas.getContext("2d");
+    var x = centerx - width/2;
+    var y = centery - height/2;
     ctx.drawImage(image, Math.round(x), Math.round(y), Math.round(width), Math.round(height));
 }
 
@@ -36,24 +35,23 @@ var download = function(){
 
 function draw() {
     //read user input
-    hue = document.getElementById("hue").value;
-    flarecenter = [parseFloat(document.getElementById("flarex").value), parseFloat(document.getElementById("flarey").value)];
-    hotspottype = document.querySelector("#Hotspot select").value;
-    streaktype = document.querySelector("#Streak select").value;
-    iristype = document.querySelector("#Iris select").value;
-    halotype = document.querySelector("#Halo select").value;
-    hotspotscale = Array.from(document.querySelectorAll("#Hotspot input[type=number]")).map(x => parseFloat(x.value));
-    streakscale = Array.from(document.querySelectorAll("#Streak input[type=number]")).map(x => parseFloat(x.value));
-    irisscale = Array.from(document.querySelectorAll("#Iris input[type=number]")).map(x => parseFloat(x.value));
-    haloscale = Array.from(document.querySelectorAll("#Halo input[type=number]")).map(x => parseFloat(x.value));
-    streakbalance = parseFloat(document.querySelectorAll("#Streak input[type=number]")[2].value);
-    seed = document.querySelectorAll("#Iris input[type=text]")[0].value;
+    var hue = document.getElementById("hue").value;
+    var flarecenter = [parseFloat(document.getElementById("flarex").value), parseFloat(document.getElementById("flarey").value)];
+    var hotspottype = document.querySelector("#Hotspot select").value;
+    var streaktype = document.querySelector("#Streak select").value;
+    var iristype = document.querySelector("#Iris select").value;
+    var halotype = document.querySelector("#Halo select").value;
+    var hotspotscale = Array.from(document.querySelectorAll("#Hotspot input[type=number]")).map(x => parseFloat(x.value));
+    var streakscale = Array.from(document.querySelectorAll("#Streak input[type=number]")).map(x => parseFloat(x.value));
+    var irisscale = Array.from(document.querySelectorAll("#Iris input[type=number]")).map(x => parseFloat(x.value));
+    var haloscale = Array.from(document.querySelectorAll("#Halo input[type=number]")).map(x => parseFloat(x.value));
+    var streakbalance = parseFloat(document.querySelectorAll("#Streak input[type=number]")[2].value);
+    var seed = document.querySelectorAll("#Iris input[type=text]")[0].value;
 
     /*//set filters
     ctx.filter = "hue-rotate(" + hue + "deg)";*/ //performance too low
 
     //clear old drawing
-    ctx = canvas.getContext("2d");
     ctx.clearRect(0, 0, docWidth, docHeight);
     ctx.fillStyle = "black";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -73,13 +71,13 @@ function draw() {
         Math.seedrandom(seed);
 
         // multi-iris towards camera
-        currentx = flarecenter[0];
-        currenty = flarecenter[1];
+        var currentx = flarecenter[0];
+        var currenty = flarecenter[1];
         for (i = 0; i < 55; i++) {
             currentx += (docWidth / 2 - flarecenter[0]) / 30;
             currenty += (docHeight / 2 - flarecenter[1]) / 30;
             if (Math.random() < 0.35) {
-                sclFac = Math.random() * (i / 50);
+                var sclFac = Math.random() * (i / 50);
                 ctx.globalAlpha = Math.random() / 2;
                 addArtifact("textures/iris" + iristype + ".png", currentx, currenty, docHeight / 2 * sclFac * irisscale[0], docHeight / 2 * sclFac * irisscale[1]);
                 ctx.globalAlpha = 1;
@@ -87,13 +85,13 @@ function draw() {
         }
 
         // multi-iris away from camera
-        currentx = flarecenter[0];
-        currenty = flarecenter[1];
+        var currentx = flarecenter[0];
+        var currenty = flarecenter[1];
         for (i = 0; i < 25; i++) {
             currentx -= (docWidth / 2 - flarecenter[0]) / 30;
             currenty -= (docHeight / 2 - flarecenter[1]) / 30;
             if (Math.random() < 0.35) {
-                sclFac = Math.random() * (i / 50);
+                var sclFac = Math.random() * (i / 50);
                 ctx.globalAlpha = Math.random() / 2;
                 addArtifact("textures/iris" + iristype + ".png", currentx, currenty, docHeight / 2 * sclFac * irisscale[0], docHeight / 2 * sclFac * irisscale[1]);
                 ctx.globalAlpha = 1;
@@ -106,6 +104,11 @@ function draw() {
     ctx.fillStyle = "hsl(" + hue.toString() + ", 100%, 50%)"; // would rather use hsv but can't :(
     ctx.fillRect(0, 0, docWidth, docHeight);
     ctx.globalCompositeOperation = "lighter";
+}
+
+//presets
+function setPreset(hue, hotspottype, hotspotscale, streaktype, streakscale, streakbalance, iristype, irisscale, seed, halotype, haloscale) {
+
 }
 
 //collapsable stuff
