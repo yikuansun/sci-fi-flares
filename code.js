@@ -49,8 +49,8 @@ function draw() {
     streakbalance = parseFloat(document.querySelectorAll("#Streak input[type=number]")[2].value);
     seed = document.querySelectorAll("#Iris input[type=text]")[0].value;
 
-    //set filters
-    ctx.filter = "hue-rotate(" + hue + "deg)";
+    /*//set filters
+    ctx.filter = "hue-rotate(" + hue + "deg)";*/ //performance too low
 
     //clear old drawing
     ctx = canvas.getContext("2d");
@@ -100,6 +100,12 @@ function draw() {
             }
         }
     }
+
+    //recolor
+    ctx.globalCompositeOperation = "hue";
+    ctx.fillStyle = "hsl(" + hue.toString() + ", 100%, 50%)"; // would rather use hsv but can't :(
+    ctx.fillRect(0, 0, docWidth, docHeight);
+    ctx.globalCompositeOperation = "lighter";
 }
 
 //collapsable stuff
@@ -148,7 +154,7 @@ if (inIframe()) {
 
 //update preview
 for (inputbox of document.querySelectorAll("select, input[type=number], input[type=range], input[type=text]")) {
-    inputbox.onchange = draw;
+    inputbox.addEventListener("input", draw);
 }
 //export overlay
 document.getElementsByTagName("button")[0].onclick = download;
