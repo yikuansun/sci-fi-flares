@@ -74,8 +74,8 @@ function draw() {
         var currentx = flarecenter[0];
         var currenty = flarecenter[1];
         for (i = 0; i < 55; i++) {
-            currentx += (docWidth / 2 - flarecenter[0]) / 30;
-            currenty += (docHeight / 2 - flarecenter[1]) / 30;
+            currentx += (docWidth / 2 - flarecenter[0]) / 20;
+            currenty += (docHeight / 2 - flarecenter[1]) / 20;
             if (Math.random() < 0.35) {
                 var sclFac = Math.random() * (i / 50);
                 ctx.globalAlpha = Math.random() / 2;
@@ -88,8 +88,8 @@ function draw() {
         var currentx = flarecenter[0];
         var currenty = flarecenter[1];
         for (i = 0; i < 25; i++) {
-            currentx -= (docWidth / 2 - flarecenter[0]) / 30;
-            currenty -= (docHeight / 2 - flarecenter[1]) / 30;
+            currentx -= (docWidth / 2 - flarecenter[0]) / 20;
+            currenty -= (docHeight / 2 - flarecenter[1]) / 20;
             if (Math.random() < 0.35) {
                 var sclFac = Math.random() * (i / 50);
                 ctx.globalAlpha = Math.random() / 2;
