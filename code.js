@@ -58,14 +58,14 @@ function draw() {
 
     //add elements
     if (streaktype != "None") {
-        addArtifact("textures/streakleft" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth + (flarecenter[0] - docWidth / 2) * streakbalance) / 1.25 * streakscale[0], docHeight / 5 * streakscale[1]);
-        addArtifact("textures/streakright" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth - (flarecenter[0] - docWidth / 2) * streakbalance) / 1.25 * streakscale[0], docHeight / 5 * streakscale[1]);
+        addArtifact("textures/streakleft" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth + (flarecenter[0] - docWidth / 2) * streakbalance) / 1.25 * streakscale[0], docHeight / 6 * streakscale[1]);
+        addArtifact("textures/streakright" + streaktype + ".png", flarecenter[0], flarecenter[1], (docWidth - (flarecenter[0] - docWidth / 2) * streakbalance) / 1.25 * streakscale[0], docHeight / 6 * streakscale[1]);
     }
     if (hotspottype != "None") {
-        addArtifact("textures/hotspot" + hotspottype + ".png", flarecenter[0], flarecenter[1], docHeight / 2.7 * hotspotscale[0], docHeight / 2.7 * hotspotscale[1]);
+        addArtifact("textures/hotspot" + hotspottype + ".png", flarecenter[0], flarecenter[1], docHeight / 3 * hotspotscale[0], docHeight / 3 * hotspotscale[1]);
     }
     if (halotype != "None") {
-        addArtifact("textures/halo" + halotype + ".png", flarecenter[0], flarecenter[1], docHeight / 1.75 * haloscale[0], docHeight / 1.75 * haloscale[1]);
+        addArtifact("textures/halo" + halotype + ".png", flarecenter[0], flarecenter[1], docHeight / 2 * haloscale[0], docHeight / 2 * haloscale[1]);
     }
     if (iristype != "None") {
         Math.seedrandom(seed);
