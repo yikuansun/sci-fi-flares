@@ -137,5 +137,5 @@ for (inputbox of document.querySelectorAll("select, input[type=number], input[ty
 document.getElementsByTagName("button")[0].onclick = download;
 draw();
 if (usingAPI) {
-    photopea_build(); // haha reuse function why not
+    window.parent.postMessage(canvas.toDataURL("image/png"), "*");
 }
