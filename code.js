@@ -76,7 +76,7 @@ document.getElementById("preset").addEventListener("input", function() { setPres
 
 //check if data sent via postmessage
 window.addEventListener("message", function(e) {
-    setPreset(e.data);
+    setPreset.apply(null, e.data);
     window.parent.postMessage(canvas.toDataURL("image/png")); //send back URL
 });
 
