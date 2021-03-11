@@ -74,6 +74,12 @@ for (presetname in presets) {
 }
 document.getElementById("preset").addEventListener("input", function() { setPreset.apply(null, presets[this.value]); });
 
+//check if data sent via postmessage
+window.addEventListener("message", function(e) {
+    setPreset(e.data);
+    window.parent.postMessage(canvas.toDataURL("image/png")); //send back URL
+});
+
 //collapsable stuff
 for (collapsable of document.querySelectorAll("#Hotspot, #Streak, #Iris, #Halo")) {
     collapsable.style.display = "none";
