@@ -2,9 +2,6 @@
 pageURL = new URL(location.href);
 docWidth = parseFloat(pageURL.searchParams.get("canvaswidth"));
 docHeight = parseFloat(pageURL.searchParams.get("canvasheight"));
-usingAPI = pageURL.searchParams.get("usingAPI");
-presetData = (new Function("return " + pageURL.searchParams.get("presetData")))();
-defaultFlareCenter = (new Function("return " + pageURL.searchParams.get("defaultFlareCenter")))();
 
 //go back if url is not valid
 if (Number.isNaN(docWidth) || Number.isNaN(docHeight)) {
@@ -77,14 +74,6 @@ for (presetname in presets) {
 }
 document.getElementById("preset").addEventListener("input", function() { setPreset.apply(null, presets[this.value]); });
 
-if (presetData) {
-    setPreset.apply(null, presetData);
-}
-if (defaultFlareCenter) {
-    document.getElementById("flarex").value = defaultFlareCenter[0];
-    document.getElementById("flarey").value = defaultFlareCenter[1];
-}
-
 //collapsable stuff
 for (collapsable of document.querySelectorAll("#Hotspot, #Streak, #Iris, #Halo")) {
     collapsable.style.display = "none";
@@ -136,6 +125,3 @@ for (inputbox of document.querySelectorAll("select, input[type=number], input[ty
 //export overlay
 document.getElementsByTagName("button")[0].onclick = download;
 draw();
-if (usingAPI) {
-    photopea_build(); // haha reuse function why not
-}
