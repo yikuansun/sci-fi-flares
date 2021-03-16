@@ -1,7 +1,7 @@
 //initiate vars
-pageURL = new URL(location.href);
-docWidth = parseFloat(pageURL.searchParams.get("canvaswidth"));
-docHeight = parseFloat(pageURL.searchParams.get("canvasheight"));
+const pageURL = new URL(location.href);
+const docWidth = parseFloat(pageURL.searchParams.get("canvaswidth"));
+const docHeight = parseFloat(pageURL.searchParams.get("canvasheight"));
 
 //go back if url is not valid
 if (Number.isNaN(docWidth) || Number.isNaN(docHeight)) {
@@ -9,7 +9,7 @@ if (Number.isNaN(docWidth) || Number.isNaN(docHeight)) {
 }
 
 //initiate canvas
-canvas = document.getElementById('canvas');
+var canvas = document.getElementById('canvas');
 canvas.style.backgroundColor = "#000000";
 canvas.width = docWidth;
 canvas.height = docHeight;
@@ -58,7 +58,7 @@ function setPreset(hue, hotspottype, hotspotscale, streaktype, streakscale, stre
     draw();
 }
 
-presets = {
+const presets = {
     "Default": [0, 1, [1, 1], 1, [1, 1], 1.5, 1, [1, 1], "hii", 1, [1, 1]],
     "Brightest Beam": [0, 2, [1, 1], 3, [1, 1], 0, 2, [1, 1], "hii", 4, [1, 1]],
     "Cinematic Streak": [110, "None", [1, 1], 1, [0.69, 0.69], 0, 3, [0.69, 0.69], "yo", 2, [0.69, 0.69]],
@@ -68,7 +68,7 @@ presets = {
 
 document.getElementById("preset").style.width = "150px";
 for (presetname in presets) {
-    optionelem = document.createElement("option");
+    var optionelem = document.createElement("option");
     optionelem.innerText = presetname;
     document.getElementById("preset").appendChild(optionelem);
 }
@@ -122,7 +122,7 @@ function inIframe () {
 
 //photopea thing
 if (inIframe()) {
-    photopea_button = document.createElement("button");
+    var photopea_button = document.createElement("button");
     photopea_button.innerText = "Add to document (Photopea)";
     document.getElementById("optionspannel").appendChild(photopea_button);
     photopea_button.onclick = photopea_build;
