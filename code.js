@@ -80,7 +80,8 @@ window.addEventListener("message", function(e) {
         setPreset.apply(null, e.data.config);
         window.parent.postMessage(canvas.toDataURL("image/png")); //send back URL
     }
-    else if (typeof(e.data) == "string") {
+    else if (typeof(e.data) == "string" && !repeat) { // fire event when image is added to Photopea canvas
+        repeat = true; // prevent repeat
         window.parent.postMessage("app.activeDocument.activeLayer.blendMode = 'lddg'", "*");
     }
 });
@@ -100,10 +101,12 @@ for (collapsable of document.querySelectorAll("#Hotspot, #Streak, #Iris, #Halo")
     `);
 }
 
+var repeat = true;
 //send to photopea
 function photopea_build() {
     var x = "app.open('%s', null, true);".replace("%s", canvas.toDataURL("image/png"));
     window.parent.postMessage(x, "*");
+    repeat = false;
 }
 
 //only show photopea button if in iframe
