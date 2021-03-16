@@ -97,13 +97,8 @@ for (collapsable of document.querySelectorAll("#Hotspot, #Streak, #Iris, #Halo")
 
 //send to photopea
 function photopea_build() {
-    base64 = canvas.toDataURL("image/png").split(';base64,')[1];
-    binary_string = window.atob(base64);
-    bytes = new Uint8Array(binary_string.length);
-    for (i = 0; i < binary_string.length; i++) {
-        bytes[i] = binary_string.charCodeAt(i);
-    }
-    window.parent.postMessage(bytes.buffer, "*");
+    var x = "app.open('%s', null, true);".replace("%s", canvas.toDataURL("image/png"));
+    window.parent.postMessage(x, "*");
     window.parent.postMessage("app.activeDocument.activeLayer.blendMode = 'lddg'", "*");
 }
 
