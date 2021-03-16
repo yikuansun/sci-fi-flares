@@ -77,6 +77,8 @@ document.getElementById("preset").addEventListener("input", function() { setPres
 //check if data sent via postmessage
 window.addEventListener("message", function(e) {
     if (typeof(e.data) == "object") {
+        document.getElementById("flarex").value = e.data.pos[0];
+        document.getElementById("flarey").value = e.data.pos[1];
         setPreset.apply(null, e.data.config);
         window.parent.postMessage(canvas.toDataURL("image/png")); //send back URL
     }
