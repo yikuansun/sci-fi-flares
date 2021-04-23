@@ -102,7 +102,7 @@ for (collapsable of document.querySelectorAll("#Hotspot, #Streak, #Iris, #Halo")
 //send to photopea
 function photopea_build() {
     Photopea.runScript(window.parent, `app.open("${canvas.toDataURL("image/png")}", null, true);`).then(function() {
-        Photopea.runScript(window.parent, "app.activeDocument.activeLayer.blendMode = 'lddg'");
+        Photopea.runScript(window.parent, "app.activeDocument.activeLayer.blendMode = 'lddg';").then((e) => { console.log(e); });
     });
 }
 
