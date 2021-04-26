@@ -63,7 +63,8 @@ const presets = {
     "Brightest Beam": [0, 2, [1, 1], 3, [1, 1], 0, 2, [1, 1], "hii", 4, [1, 1]],
     "Cinematic Streak": [110, "None", [1, 1], 1, [0.69, 0.69], 0, 3, [0.69, 0.69], "yo", 2, [0.69, 0.69]],
     "Lavish Laser": [-150, 1, [1.69, 0.69], 2, [1.5, 1], 1.5, 1, [1, 1], "hi", "None", [1, 1]],
-    "Full Flashlight": [40, 1, [1, 1], 1, [1, 1], 1, 1, [1, 1], "hiii", 3, [1, 1]]
+    "Full Flashlight": [40, 1, [1, 1], 1, [1, 1], 1, 1, [1, 1], "hiii", 3, [1, 1]],
+    "Starship Stadium": [-157, 4, [2, 2], 1, [1.54, 0.69], 1.5, 2, [1, 1], "yeeee", 3, [2, 2]]
 };
 
 document.getElementById("preset").style.width = "150px";
